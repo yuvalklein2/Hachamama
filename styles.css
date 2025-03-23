@@ -274,6 +274,55 @@ nav a:hover {
     text-align: center;
 }
 
+.contact p {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.contact .cta-button {
+    font-size: 3.2rem;
+    padding: 2rem 6rem;
+}
+
+.social-buttons {
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-button {
+    font-family: 'Amatic SC', cursive;
+    font-size: 2.8rem;
+    padding: 1.5rem 4rem;
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--white);
+    cursor: pointer;
+    transition: opacity 0.3s;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-button i {
+    font-size: 2.4rem;
+}
+
+.social-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.social-button.instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+.social-button.facebook {
+    background-color: #1877F2;
+}
+
 form {
     max-width: 600px;
     margin: 4rem auto;
