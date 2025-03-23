@@ -165,23 +165,11 @@ nav a:hover {
     object-fit: cover;
 }
 
-.hero-text h1 {
-    font-size: 3rem;
+.hero h1 {
+    font-size: 5.6rem;
+    margin-bottom: 2rem;
+    color: var(--text);
     line-height: 1.2;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-top: 2rem;
-}
-
-.hero-text h1::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80px;
-    height: 4px;
-    background-color: var(--primary);
-    border-radius: 2px;
 }
 
 .hero p {
@@ -676,16 +664,6 @@ footer {
     .footer-bottom p {
         font-size: 1.8rem;
     }
-
-    .hero-text h1 {
-        font-size: 2.2rem;
-        padding-top: 1.5rem;
-    }
-
-    .hero-text h1::before {
-        width: 60px;
-        height: 3px;
-    }
 }
 
 .features-grid {
@@ -700,46 +678,37 @@ footer {
 }
 
 .feature-box {
-    background-color: var(--white);
-    padding: 3rem;
+    background: var(--white);
+    padding: 2rem;
     border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
     position: relative;
-    padding-top: 6rem;
 }
 
-.feature-box::before {
+.feature-box h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    position: relative;
+    padding-top: 2rem;
+}
+
+.feature-box h4::before {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--primary);
+    width: 40px;
+    height: 4px;
+    background: var(--primary);
     border-radius: 2px;
-    margin-top: 2rem;
-}
-
-.feature-box i {
-    position: absolute;
-    top: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2.4rem;
-    color: var(--primary);
-    margin-top: 0.5rem;
-}
-
-.feature-box h4 {
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-    font-size: 2.4rem;
 }
 
 .feature-box p {
-    font-size: 2.4rem;
+    color: var(--text);
+    line-height: 1.6;
     margin: 0;
+    font-size: 2.4rem;
 } 
