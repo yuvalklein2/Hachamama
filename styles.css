@@ -283,10 +283,10 @@ nav a:hover {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
-    gap: 1.2rem;
-    max-width: 1000px;
+    gap: 1.5rem;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     width: 100%;
@@ -577,6 +577,12 @@ footer {
 @media (max-width: 768px) {
     html {
         font-size: 50%;
+        scroll-behavior: auto !important;
+    }
+
+    body {
+        position: relative;
+        top: 0 !important;
     }
 
     .menu-toggle {
@@ -668,25 +674,34 @@ footer {
     }
 
     .gallery {
-        padding: 3rem 3%;
+        padding: 4rem 2%;
     }
     
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 0;
+        gap: 0.8rem;
+        padding: 0 0.5rem;
     }
     
-    .gallery-item:nth-child(n) {
-        grid-column: span 1;
-        grid-row: auto;
-        height: 100px;
+    .gallery-item {
+        height: auto !important;
+        aspect-ratio: 1/1;
+        margin-bottom: 0.5rem;
     }
     
     .gallery-item:nth-child(1) {
         grid-column: span 2;
-        grid-row: span 1;
-        height: 100px;
+        aspect-ratio: 2/1;
+    }
+    
+    .gallery-item img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .gallery-item::after {
+        font-size: 2.4rem;
     }
 
     .contact h2 {
@@ -774,6 +789,60 @@ footer {
     .workshop-card {
         margin-bottom: 3rem;
     }
+
+    /* Workshop cards for mobile */
+    .workshop-grid {
+        gap: 1.5rem;
+    }
+    
+    .workshop-card {
+        margin-bottom: 1rem;
+        height: auto;
+    }
+    
+    .workshop-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .workshop-details {
+        padding-right: 0;
+    }
+    
+    .workshop-details li {
+        padding-right: 2.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Contact section */
+    .contact {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    
+    .testimonial-card {
+        padding: 2rem;
+    }
+    
+    /* About section */
+    .about {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    
+    .about-content {
+        gap: 3rem;
+    }
+    
+    .about-text {
+        font-size: 2rem;
+    }
 }
 
 /* Small mobile adjustments */
@@ -795,12 +864,16 @@ footer {
     }
 
     .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+    
+    .gallery-item {
+        border-radius: 12px;
     }
     
     .gallery-item:nth-child(1) {
-        grid-column: span 1;
+        grid-column: span 2;
     }
 
     section {
@@ -935,4 +1008,11 @@ footer {
 /* Body state with menu open */
 body.menu-open {
     overflow: hidden;
+}
+
+/* Fix for auto-scrolling */
+html, body {
+    scroll-behavior: auto;
+    height: auto;
+    overflow-x: hidden;
 } 

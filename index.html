@@ -210,6 +210,18 @@
         </div>
     </footer>
     <script>
+        // מניעת גלילה אוטומטית
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 0);
+        });
+        
+        // חזרה להתנהגות גלילה חלקה לאחר טעינה
+        setTimeout(function() {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        }, 500);
+        
         // תפריט מובייל
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('nav ul');
