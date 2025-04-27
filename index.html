@@ -146,44 +146,34 @@
 
         <section id="gallery" class="gallery">
             <h2>גלריה</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
+            <div class="gallery-simple">
+                <div class="gallery-row">
                     <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.45.58 (1).jpeg" alt="פעילות בסדנת קטנטנים">
-                </div>
-                <div class="gallery-item">
                     <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.46.46 (1).jpeg" alt="משחק תינוקות בסדנה">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Gallery/ענקיסטים.jpeg" alt="פעילות סדנת ענקיסטים">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.51.01.jpeg" alt="פעילות בסדנה">
-                </div>
-                <div class="gallery-item">
                     <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.51.56.jpeg" alt="עיסוי תינוקות">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-row">
                     <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.52.44.jpeg" alt="סדנת תינוקות בקבוצה">
-                </div>
-                <div class="gallery-item">
                     <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.55.42.jpeg" alt="פעילות שיוויון משקל">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.56.44.jpeg" alt="תינוקות על משטח פעילות">
+                    <img src="images/Gallery/WhatsApp Image 2025-04-27 at 20.17.28.jpeg" alt="פעילות תינוקות">
                 </div>
             </div>
         </section>
 
         <section id="testimonials" class="testimonials">
             <h2>הורים מספרים</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>"הסדנאות בהחממה שינו את הדרך שבה אנחנו מבינים ומתקשרים עם הילד שלנו. סתיו ודניאל העניקו לנו כלים מעשיים שיעזרו לנו בהמשך הדרך."</p>
-                    <cite>- שירה, אמא לילד בן שנתיים</cite>
+            <div class="testimonials-scroll">
+                <div class="testimonial-image">
+                    <img src="images/Recommandations/18c3c78d-cc73-4de4-9582-a79aa83f01b4.jpg" alt="המלצה - שירה">
                 </div>
-                <div class="testimonial-card">
-                    <p>"המקצועיות והחמימות של הצוות בהחממה יצרו חוויה מיוחדת עבורנו. הילד שלנו התפתח משמעותית מאז שהתחלנו להגיע לסדנאות."</p>
-                    <cite>- דוד, אבא לילדה בת שנה וחצי</cite>
+                <div class="testimonial-image">
+                    <img src="images/Recommandations/ae5b73e9-4d11-4eda-bba0-9cc82368d847.jpg" alt="המלצה - דוד">
+                </div>
+                <div class="testimonial-image">
+                    <img src="images/Recommandations/2b1575df-47ab-4ca4-b252-a1ab272f872a.jpg" alt="המלצה - רונית">
+                </div>
+                <div class="testimonial-image">
+                    <img src="images/Recommandations/f729fe8f-55b3-4f72-bf28-826a51135e0a.jpg" alt="המלצה - מיכל">
                 </div>
             </div>
         </section>
@@ -268,14 +258,6 @@
             card.style.setProperty('--card-index', index);
         });
 
-        document.querySelectorAll('.gallery-item').forEach((item, index) => {
-            item.style.setProperty('--item-index', index);
-        });
-
-        document.querySelectorAll('.testimonial-card').forEach((card, index) => {
-            card.style.setProperty('--card-index', index);
-        });
-
         // אנימציית הופעה בהגללה לגלריה
         const observerOptions = {
             threshold: 0.1,
@@ -285,12 +267,17 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    // Add small delay based on index for cascade effect
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, entry.target.dataset.delay || 0);
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.gallery-item').forEach(item => {
+        // Add sequential animation delay to gallery items
+        document.querySelectorAll('.gallery-item').forEach((item, index) => {
+            item.dataset.delay = index * 100; // 100ms delay between each item
             observer.observe(item);
         });
         
@@ -299,7 +286,7 @@
         const lightboxImg = document.querySelector('.lightbox-img');
         const lightboxClose = document.querySelector('.lightbox-close');
         
-        document.querySelectorAll('.gallery-item img').forEach(img => {
+        document.querySelectorAll('.gallery-row img').forEach(img => {
             img.addEventListener('click', () => {
                 lightboxImg.src = img.src;
                 lightbox.classList.add('active');
@@ -316,6 +303,14 @@
             if (e.target === lightbox) {
                 lightbox.classList.remove('active');
                 document.body.style.overflow = ''; // Re-enable scrolling
+            }
+        });
+        
+        // Keyboard support for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
     </script>
