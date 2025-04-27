@@ -112,47 +112,50 @@
                 </div>
                 <div class="workshop-card">
                     <div class="workshop-content">
-                        <h3>ענקיסטים (חמישה עד שבעה)</h3>
-                        <p>היכרות והכנה לזחילה (מפגש קיים)</p>
+                        <h3>ענקיסטים (5-8 חודשים)</h3>
+                        <p>התינוק שלך בגיל בו הוא מגלה את הזחילה, את נפלאות האוכל, המשחק שלו מתפתח ואת שוקלת להכניס למסגרת?</p>
+                        <h4>תכני הסדנה:</h4>
                         <ul class="workshop-details">
-                            <li>משחקים תואמי גיל- לשים על שרפרף, משחקי קוקו והחשיבות של קביעות אובייקט, זכדורים, משחקים של הוצאה והכנסה, פופ אפ, מטפחות, צעצועים מסתובבים או שנדבקים על החלון</li>
-                            <li>אולי זה כן משחק- לפצל את המפגש הקודם</li>
-                            <li>הושבה מול התיישבות- התרגילים של הכנה מלידה</li>
-                            <li>הכנסת ילד למסגרת - הקורס של הכנה מלידה</li>
+                            <li>הכנה לזחילה</li>
+                            <li>⁠משחקים תואמי גיל</li>
+                            <li>⁠אוכל זה כן משחק</li>
+                            <li>⁠הושבה מול התיישבות</li>
+                            <li>⁠הכנסת ילד למסגרת</li>
                         </ul>
                     </div>
                     <div class="workshop-image">
-                        <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.55.41.jpeg" alt="סדנת ענקיסטים">
+                        <img src="images/Gallery/ענקיסטים.jpeg" alt="סדנת ענקיסטים">
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="gallery" class="gallery">
+            <h2>גלריה</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.45.58 (1).jpeg" alt="">
+                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.45.58 (1).jpeg" alt="פעילות בסדנת קטנטנים">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.46.46 (1).jpeg" alt="">
+                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.46.46 (1).jpeg" alt="משחק תינוקות בסדנה">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.55.41.jpeg" alt="">
+                    <img src="images/Gallery/ענקיסטים.jpeg" alt="פעילות סדנת ענקיסטים">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.51.01.jpeg" alt="">
+                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.51.01.jpeg" alt="פעילות בסדנה">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.51.56.jpeg" alt="">
+                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.51.56.jpeg" alt="עיסוי תינוקות">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.52.44.jpeg" alt="">
+                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.52.44.jpeg" alt="סדנת תינוקות בקבוצה">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.55.42.jpeg" alt="">
+                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.55.42.jpeg" alt="פעילות שיוויון משקל">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.56.44.jpeg" alt="">
+                    <img src="images/Gallery/WhatsApp Image 2025-03-16 at 19.56.44.jpeg" alt="תינוקות על משטח פעילות">
                 </div>
             </div>
         </section>
@@ -190,6 +193,11 @@
             </div>
         </section>
     </main>
+
+    <div class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <img src="" alt="" class="lightbox-img">
+    </div>
 
     <footer>
         <div class="footer-content">
@@ -246,6 +254,31 @@
 
         document.querySelectorAll('.gallery-item').forEach(item => {
             observer.observe(item);
+        });
+        
+        // Lightbox functionality
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+            });
+        });
+        
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scrolling
+        });
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            }
         });
     </script>
 </body>
