@@ -27,7 +27,7 @@ body {
     line-height: 1.8;
     color: var(--text);
     background-color: var(--white);
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     font-weight: 400;
 }
 
@@ -39,21 +39,21 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 7.2rem;
+    font-size: 8rem;
 }
 
 h2 {
-    font-size: 6.4rem;
+    font-size: 7.2rem;
     text-align: center;
     margin-bottom: 4rem;
 }
 
 h3 {
-    font-size: 4.8rem;
+    font-size: 5.4rem;
 }
 
 h4 {
-    font-size: 3.6rem;
+    font-size: 4.2rem;
 }
 
 section {
@@ -91,7 +91,7 @@ nav ul {
 nav a {
     color: var(--text);
     text-decoration: none;
-    font-size: 2.6rem;
+    font-size: 3rem;
     transition: color 0.3s;
     font-weight: 700;
 }
@@ -173,7 +173,7 @@ nav a:hover {
 }
 
 .hero p {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     line-height: 1.6;
     color: var(--gray);
     margin-bottom: 3rem;
@@ -226,7 +226,7 @@ nav a:hover {
 .workshop-details {
     list-style: none;
     margin-top: 2rem;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
 }
 
 .workshop-details li {
@@ -267,7 +267,7 @@ nav a:hover {
 
 .about-text {
     flex: 1;
-    font-size: 2.8rem;
+    font-size: 3.2rem;
 }
 
 /* גלריה */
@@ -418,14 +418,14 @@ nav a:hover {
 }
 
 .testimonial-card p {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     margin-bottom: 2rem;
 }
 
 .testimonial-card cite {
     color: var(--gray);
     font-style: normal;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
 }
 
 /* צור קשר */
@@ -453,9 +453,9 @@ nav a:hover {
 
 .social-button {
     font-family: 'Amatic SC', cursive;
-    font-size: 2.8rem;
-    width: 5rem;
-    height: 5rem;
+    font-size: 3.2rem;
+    width: 5.5rem;
+    height: 5.5rem;
     padding: 0;
     border: none;
     border-radius: 50%;
@@ -468,7 +468,7 @@ nav a:hover {
 }
 
 .social-button i {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
 }
 
 .social-button:hover {
@@ -517,7 +517,7 @@ textarea {
     border: none;
     padding: 1.5rem 4rem;
     border-radius: var(--border-radius);
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     cursor: pointer;
     transition: background-color 0.3s;
     font-family: 'Amatic SC', cursive;
@@ -544,7 +544,7 @@ footer {
 }
 
 .footer-section p {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     margin-bottom: 2rem;
 }
 
@@ -555,7 +555,7 @@ footer {
 }
 
 .footer-bottom p {
-    font-size: 2rem;
+    font-size: 2.4rem;
 }
 
 /* מובייל */
@@ -641,7 +641,7 @@ footer {
     }
 
     .hero p {
-        font-size: 2rem;
+        font-size: 2.4rem;
         text-align: right;
     }
 
@@ -666,7 +666,7 @@ footer {
     }
 
     .feature-box p {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .workshop-details li {
@@ -724,15 +724,15 @@ footer {
     }
 
     .social-button i {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     .footer-section p {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     .footer-bottom p {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
 
     /* Mobile menu fixes */
@@ -754,7 +754,7 @@ footer {
     nav a {
         display: block;
         padding: 1rem 0;
-        font-size: 2.4rem;
+        font-size: 2.8rem;
     }
 
     .feature-box {
@@ -782,7 +782,7 @@ footer {
     }
 
     .feature-box p {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
         line-height: 1.4;
     }
 
@@ -810,7 +810,7 @@ footer {
     
     .workshop-details li {
         padding-right: 2.5rem;
-        font-size: 1.8rem;
+        font-size: 2.2rem;
         margin-bottom: 1rem;
     }
     
@@ -841,7 +841,7 @@ footer {
     }
     
     .about-text {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 }
 
@@ -852,7 +852,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 3.8rem;
+        font-size: 4.2rem;
     }
 
     .hero-text {
@@ -962,7 +962,7 @@ footer {
     color: var(--text);
     line-height: 1.6;
     margin: 0;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
 }
 
 /* Lightbox */
