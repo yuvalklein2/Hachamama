@@ -268,7 +268,60 @@ nav a:hover {
 
 .about-text {
     flex: 1;
-    font-size: 3.2rem;
+    font-size: 2.2rem;
+    line-height: 1.7;
+    color: var(--text);
+    max-width: 800px;
+}
+
+/* Team bios styling */
+.team-bios {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.bio-card {
+    flex: 1;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.bio-card h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 2.8rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.bio-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.bio-card p {
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    line-height: 1.6;
+}
+
+.bio-card p:last-child {
+    margin-bottom: 0;
 }
 
 /* גלריה */
@@ -869,6 +922,25 @@ footer {
     /* נוודא שהלוגו מתאים */
     .logo-img {
         height: 60px;
+    }
+
+    /* Mobile responsive styles for team bios */
+    .team-bios {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .bio-card {
+        width: 100%;
+        padding: 2rem;
+    }
+    
+    .bio-card h3 {
+        font-size: 2.6rem;
+    }
+    
+    .bio-card p {
+        font-size: 2rem;
     }
 }
 
