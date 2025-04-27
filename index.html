@@ -216,13 +216,25 @@
         
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         });
 
         // סגירת תפריט בלחיצה על לינק
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
             });
+        });
+
+        // סגירת תפריט בלחיצה מחוץ לתפריט
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && 
+                !navMenu.contains(e.target) && 
+                e.target !== menuToggle) {
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
         });
 
         // אנימציות לכרטיסים
